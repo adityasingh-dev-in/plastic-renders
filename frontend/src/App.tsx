@@ -8,6 +8,7 @@ function App() {
         <Routes>
           <Route path="/" element={<h1>Welcome to MERN App (TypeScript)</h1>} />
         </Routes>
+        app
       </div>
     </Router>
   );

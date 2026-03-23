@@ -9,6 +9,7 @@ import StatsSection from '../../sections/stats/statsSection';
 import ContactSection from '../../sections/ContactSection/ContactSection';
 import Footer from '../../components/ui/Footer';
 import BackToTop from '../../components/ui/BackToTop';
+import SEO from '../../components/SEO';
 
 /**
  * Main landing page – assembles all sections in order.
@@ -20,6 +21,12 @@ const LandingPage = () => {
 
   return (
     <main>
+      <SEO 
+        title="Plastic Renders | Premium 3D Design & Video Editing"
+        description="Professional 3D modeling, photorealistic rendering, and cinematic video editing services. We transform your vision into premium digital experiences."
+        name="Plastic Renders"
+        image="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&q=80&w=1200"
+      />
       <HeroSection />
       <VideoPortfolio />
       <ModelPortfolio />

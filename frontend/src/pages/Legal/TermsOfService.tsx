@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
+import SEO from '../../components/SEO';
 
 export default function TermsOfService() {
   const navigate = useNavigate();
@@ -11,7 +12,11 @@ export default function TermsOfService() {
 
   return (
     <div className="min-h-screen bg-[#fafafa] pt-32 pb-24 px-[5vw]">
-      
+      <SEO 
+        title="Terms of Service"
+        description="Read the terms and conditions for using Plastic Renders' services, including intellectual property rights and liability limitations."
+        name="Plastic Renders"
+      />
       <div className="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100">
         
         <motion.div

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
+import SEO from '../../components/SEO';
 
 export default function PrivacyPolicy() {
   const navigate = useNavigate();
@@ -11,6 +12,11 @@ export default function PrivacyPolicy() {
 
   return (
     <div className="min-h-screen bg-[#fafafa] pt-32 pb-24 px-[5vw]">
+      <SEO 
+        title="Privacy Policy"
+        description="Learn how Plastic Renders collects, uses, and protects your personal data. Our commitment to your privacy and data security."
+        name="Plastic Renders"
+      />
       <div className="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -100,7 +100,7 @@ export default function ContactSection() {
           className="mt-3 text-white/50 leading-[1.7]"
         >
           Ready to transform your digital presence? We'd love to hear about your project.{' '}
-          <a href="mailto:plasticrenders@gmail.com" className="text-[var(--blue)] no-underline font-semibold hover:underline">
+          <a href="mailto:plasticrenders@gmail.com" className="text-(--blue) no-underline font-semibold hover:underline">
             plasticrenders@gmail.com
           </a>
         </motion.p>
@@ -167,7 +167,7 @@ export default function ContactSection() {
           <button
             type="submit"
             disabled={sending}
-            className="flex items-center justify-center gap-2 w-full py-4 bg-[var(--blue)] text-white border-2 border-[var(--blue)] rounded-md font-sans text-[1rem] font-semibold cursor-pointer transition-all duration-200 hover:bg-[#2a5ad4] hover:border-[#2a5ad4] disabled:opacity-60 disabled:cursor-not-allowed"
+            className="flex items-center justify-center gap-2 w-full py-4 bg-(--blue) text-white border-2 border-(--blue) rounded-md font-sans text-[1rem] font-semibold cursor-pointer transition-all duration-200 hover:bg-[#2a5ad4] hover:border-[#2a5ad4] disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {sending ? (
               <>

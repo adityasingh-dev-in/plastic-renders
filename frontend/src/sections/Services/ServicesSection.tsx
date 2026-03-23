@@ -58,57 +58,68 @@ function ServiceModal({ service, onClose }: any) {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         onClick={onClose}
-        className="fixed inset-0 z-[1000] bg-gray-900/80 backdrop-blur-xl flex items-center justify-center p-4"
+        className="fixed inset-0 z-[1000] bg-gray-900/80 backdrop-blur-xl flex items-center justify-center p-4 sm:p-6"
       >
         <motion.div
           initial={{ opacity: 0, scale: 0.95, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           onClick={e => e.stopPropagation()}
-          className="bg-white rounded-3xl max-w-[700px] w-full max-h-[90vh] overflow-hidden shadow-2xl relative"
+          className="bg-white rounded-3xl max-w-[800px] w-full max-h-[90vh] overflow-hidden shadow-2xl relative flex flex-col md:flex-row"
         >
-          {/* Close Button */}
+          {/* Close Button - More visible on mobile */}
           <button 
             onClick={onClose}
-            className="absolute top-4 right-4 z-50 p-2 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full text-white transition-colors"
+            className="absolute top-4 right-4 z-50 p-2 bg-black/10 sm:bg-white/20 hover:bg-black/20 sm:hover:bg-white/40 backdrop-blur-md rounded-full text-gray-900 sm:text-white transition-colors"
           >
             <X size={20} />
           </button>
 
-          <div className="flex flex-col md:flex-row h-full">
-            {/* Modal Image Left Side */}
-            <div className="md:w-5/12 h-[200px] md:h-auto relative">
-               <img src={service.image} className="w-full h-full object-cover" alt="" />
-               <div 
-                 className="absolute inset-0 opacity-40" 
-                 style={{ background: `linear-gradient(to bottom right, ${service.c1}, ${service.c2})` }} 
-               />
+          {/* Modal Image - Adjusted for Mobile Aspect Ratio */}
+          <div className="w-full md:w-5/12 h-48 md:h-auto relative shrink-0">
+             <img src={service.image} className="w-full h-full object-cover" alt={service.title} />
+             <div 
+               className="absolute inset-0 opacity-40" 
+               style={{ background: `linear-gradient(to bottom right, ${service.c1}, ${service.c2})` }} 
+             />
+          </div>
+
+          {/* Modal Content - Better padding and scrolling */}
+          <div className="w-full md:w-7/12 p-6 md:p-10 overflow-y-auto flex flex-col">
+            <span className="text-[10px] sm:text-xs font-bold tracking-widest text-blue-600 uppercase">
+              {service.tag}
+            </span>
+            <h2 className="text-2xl md:text-3xl font-bold mt-2 mb-4 text-gray-900 leading-tight">
+              {service.title}
+            </h2>
+            <p className="text-gray-600 leading-relaxed text-sm mb-6">
+              {service.long}
+            </p>
+            
+            <div className="space-y-3 mb-8">
+              {service.features.map((f: string) => (
+                <div key={f} className="flex items-start gap-3 text-sm text-gray-700 font-medium">
+                  <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-1.5 shrink-0" />
+                  <span>{f}</span>
+                </div>
+              ))}
             </div>
 
-            {/* Modal Content Right Side */}
-            <div className="md:w-7/12 p-8 md:p-10 overflow-y-auto">
-              <span className="text-xs font-bold tracking-widest text-blue-600 uppercase">{service.tag}</span>
-              <h2 className="text-3xl font-bold mt-2 mb-4 text-gray-900">{service.title}</h2>
-              <p className="text-gray-600 leading-relaxed text-sm mb-6">{service.long}</p>
-              
-              <div className="space-y-3 mb-8">
-                {service.features.map((f: string) => (
-                  <div key={f} className="flex items-center gap-3 text-sm text-gray-700 font-medium">
-                    <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                    {f}
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex gap-3">
-                <a href="#contact" onClick={() => { onClose(); document.querySelector('#contact')?.scrollIntoView({behavior:'smooth'}); }}
-                   className="flex-1 text-center py-3 bg-gray-900 text-white rounded-xl font-bold text-sm hover:bg-blue-600 transition-colors shadow-lg shadow-blue-900/10">
-                  Inquire Now
-                </a>
-                <button onClick={onClose} className="px-6 py-3 border border-gray-200 rounded-xl font-bold text-sm hover:bg-gray-50 transition-colors">
-                  Close
-                </button>
-              </div>
+            {/* Actions - Stacked on mobile for better tap targets if needed, or flex-row */}
+            <div className="mt-auto flex flex-col sm:flex-row gap-3">
+              <a 
+                href="#contact" 
+                onClick={() => { onClose(); document.querySelector('#contact')?.scrollIntoView({behavior:'smooth'}); }}
+                className="flex-1 text-center py-3.5 bg-gray-900 text-white rounded-xl font-bold text-sm hover:bg-blue-600 transition-all active:scale-95 shadow-lg"
+              >
+                Inquire Now
+              </a>
+              <button 
+                onClick={onClose} 
+                className="px-6 py-3.5 border border-gray-200 rounded-xl font-bold text-sm text-gray-500 hover:bg-gray-50 transition-colors"
+              >
+                Close
+              </button>
             </div>
           </div>
         </motion.div>

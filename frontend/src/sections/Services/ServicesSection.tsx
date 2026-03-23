@@ -22,6 +22,8 @@ function ServiceCard({ service, index, onOpen }: any) {
         <img 
           src={service.image} 
           alt={service.title}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover transition-transform duration-700 scale-105 group-hover:scale-110"
         />
       </div>
@@ -77,7 +79,7 @@ function ServiceModal({ service, onClose }: any) {
 
           {/* Modal Image - Adjusted for Mobile Aspect Ratio */}
           <div className="w-full md:w-5/12 h-48 md:h-auto relative shrink-0">
-             <img src={service.image} className="w-full h-full object-cover" alt={service.title} />
+             <img src={service.image} className="w-full h-full object-cover" alt={service.title} loading="lazy" decoding="async" />
              <div 
                className="absolute inset-0 opacity-40" 
                style={{ background: `linear-gradient(to bottom right, ${service.c1}, ${service.c2})` }} 

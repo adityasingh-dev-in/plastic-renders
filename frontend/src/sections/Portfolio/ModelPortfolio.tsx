@@ -28,6 +28,8 @@ function ModelCard({ project, index, onOpen }: ModelCardProps) {
         <img 
           src={project.thumbnail} 
           alt={project.title}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover transition-transform duration-[500ms] group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-black/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -125,6 +127,8 @@ function ModelModal({ project, onClose }: ModelModalProps) {
                   transition={{ duration: 0.3 }}
                   className="max-w-full max-h-full object-contain rounded-md shadow-2xl"
                   alt={`${project.title} view ${currentIndex + 1}`}
+                  loading="lazy"
+                  decoding="async"
                 />
               </AnimatePresence>
             </div>

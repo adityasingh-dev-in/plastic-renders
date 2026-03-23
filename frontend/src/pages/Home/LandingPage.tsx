@@ -1,15 +1,17 @@
+import { lazy, Suspense } from 'react';
 import { useLenis } from '../../hooks/useLenis';
 import HeroSection from '../../sections/Hero/HeroSection';
-import AboutSection from '../../sections/About/AboutSection';
 import VideoPortfolio from '../../sections/Portfolio/VideoPortfolio';
 import ModelPortfolio from '../../sections/Portfolio/ModelPortfolio';
-import ServicesSection from '../../sections/Services/ServicesSection';
-import TestimonialsSection from '../../sections/Testimonials/TestimonialsSection';
-import StatsSection from '../../sections/stats/statsSection';
-import ContactSection from '../../sections/ContactSection/ContactSection';
 import Footer from '../../components/ui/Footer';
 import BackToTop from '../../components/ui/BackToTop';
 import SEO from '../../components/SEO';
+
+const AboutSection = lazy(() => import('../../sections/About/AboutSection'));
+const ServicesSection = lazy(() => import('../../sections/Services/ServicesSection'));
+const TestimonialsSection = lazy(() => import('../../sections/Testimonials/TestimonialsSection'));
+const StatsSection = lazy(() => import('../../sections/stats/statsSection'));
+const ContactSection = lazy(() => import('../../sections/ContactSection/ContactSection'));
 
 /**
  * Main landing page – assembles all sections in order.
@@ -30,11 +32,13 @@ const LandingPage = () => {
       <HeroSection />
       <VideoPortfolio />
       <ModelPortfolio />
-      <AboutSection />
-      <ServicesSection />
-      <TestimonialsSection />
-      <StatsSection />
-      <ContactSection />
+      <Suspense fallback={null}>
+        <AboutSection />
+        <ServicesSection />
+        <TestimonialsSection />
+        <StatsSection />
+        <ContactSection />
+      </Suspense>
       <Footer />
       <BackToTop />
     </main>

@@ -1,1 +1,64 @@
 @import "tailwindcss";
+
+/* 2. CSS VARIABLES */
+:root {
+  --blue: #3B6FE8;
+  --black: #0D0D0D;
+  --white: #fff;
+  --gray: #F7F7F5;
+  --muted: #777;
+  --border: #E8E8E4;
+}
+
+/* 3. RESET & BASE STYLES */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto; /* Lenis handles smooth scroll */
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--black);
+  background: var(--white);
+  overflow-x: hidden;
+}
+
+/* 4. UTILITIES & COMPONENTS */
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-sans {
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Section base */
+section {
+  padding: 100px 5vw;
+}
+
+/* Smooth scroll offset for fixed nav */
+[id] {
+  scroll-margin-top: 72px;
+}
+
+/* 5. CUSTOM SCROLLBAR */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}

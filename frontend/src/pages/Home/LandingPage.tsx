@@ -5,6 +5,7 @@ import VideoPortfolio from '../../sections/Portfolio/VideoPortfolio';
 import ModelPortfolio from '../../sections/Portfolio/ModelPortfolio';
 import ServicesSection from '../../sections/Services/ServicesSection';
 import TestimonialsSection from '../../sections/Testimonials/TestimonialsSection';
+import StatsSection from '../../sections/stats/statsSection';
 import ContactSection from '../../sections/ContactSection/ContactSection';
 import Footer from '../../components/ui/Footer';
 import BackToTop from '../../components/ui/BackToTop';
@@ -20,11 +21,12 @@ const LandingPage = () => {
   return (
     <main>
       <HeroSection />
-      <AboutSection />
       <VideoPortfolio />
       <ModelPortfolio />
+      <AboutSection />
       <ServicesSection />
       <TestimonialsSection />
+      <StatsSection />
       <ContactSection />
       <Footer />
       <BackToTop />

@@ -178,7 +178,7 @@ export default function ModelPortfolio() {
 
   return (
     <>
-      <section id="3d-works" className="bg-[var(--gray)] pt-20 pb-24 px-[5vw]">
+      <section id="works-3d" className="bg-(--gray) pt-20 pb-24 px-[5vw]">
         {/* Header */}
         <div
           ref={headerRef}

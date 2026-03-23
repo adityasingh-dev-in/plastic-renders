@@ -1,51 +1,51 @@
 // ─── 01. BRANDING & SOCIAL ──────────────────────────────────────────
+//stats section
 export const STATS = [
   { num: '500+',    label: 'Happy Clients' },
-  { num: '25+',     label: 'Awards Won' },
   { num: '1000+',   label: 'Projects Completed' },
   { num: '10+',     label: 'Years Experience' },
 ];
 
+// ─── 02. Contact ──────────────────────────────────────────
+//contact section
 export const SOCIAL_LINKS = {
-  whatsapp:  'https://wa.me/918382838382',
+  whatsapp:  'https://wa.me/917355408607',
   instagram: 'https://instagram.com/plastic.renders',
 };
 
-// ─── 02. NAVIGATION ──────────────────────────────────────────────────
+// ─── 03. NAVIGATION ──────────────────────────────────────────────────
 export const NAV_LINKS = [
   { label: 'Services',      href: '#services' },
   { label: 'Video Works',   href: '#video-works' },
-  { label: '3D Works',      href: '#3d-works' },
+  { label: '3D Works',      href: '#works-3d' },
   { label: 'About',         href: '#about' },
   { label: 'Testimonials',  href: '#testimonials' },
   { label: 'Contact',       href: '#contact' },
 ];
 
-// ─── 03. SERVICES ────────────────────────────────────────────────────
+// ─── 04. SERVICES ────────────────────────────────────────────────────
+//services section
 export const SERVICES = [
   {
     tag:      'Creative',
+    image: 'https://images.pexels.com/photos/1188751/pexels-photo-1188751.jpeg',
     title:    'Video Editing',
-    emoji:    '🎬',
     desc:     'Professional video post-production that captures and retains your audience’s attention.',
     long:     'High-quality video editing tailored for your brand. We handle color grading, motion graphics, sound design, and narrative pacing.',
     features: ['Color grading & correction', 'Motion graphics & VFX', 'Cinematic sound design', 'Narrative story pacing', 'Social media formatting'],
-    c1:       '#b8c8f8',
-    c2:       '#7090e0',
   },
   {
     tag:      'Design',
+    image: 'https://images.pexels.com/photos/36025195/pexels-photo-36025195.jpeg',
     title:    '3D Model Designing',
-    emoji:    '🧊',
     desc:     'High-detail 3D modeling and photorealistic rendering for your products or concepts.',
     long:     'We bring your ideas to life in three dimensions. From industrial product models to abstract digital assets.',
     features: ['High-poly & low-poly modeling', 'Photorealistic rendering', 'Texture and material design', 'Lighting & environment setup', 'Animation-ready assets'],
-    c1:       '#a8d8f0',
-    c2:       '#5b9bd5',
   },
 ];
 
-// ─── 04. PORTFOLIO ───────────────────────────────────────────────────
+// ─── 05. PORTFOLIO ───────────────────────────────────────────────────
+//portfolio video section
 export const VIDEO_PROJECTS = [
   {
     title:     'Cinematic Brand Anthem',
@@ -67,6 +67,7 @@ export const VIDEO_PROJECTS = [
   },
 ];
 
+//portfolio 3d section
 export const MODEL_PROJECTS = [
   {
     title:     'Abstract Architectural Concept',
@@ -98,7 +99,28 @@ export const MODEL_PROJECTS = [
   },
 ];
 
-// ─── 05. SOCIAL PROOF ────────────────────────────────────────────────
+
+// ─── 06. DESIGNERS ────────────────────────────────────────────────
+//about section
+export const DESIGNERS = [
+  {
+    name: 'Alex Rivera',
+    role: 'Lead Video Editor',
+    image: '/video_editor.png',
+    bio: 'Specializing in cinematic storytelling and high-energy motion graphics with 8+ years of experience in post-production.',
+    tags: ['Color Grading', 'VFX', 'Sound Design']
+  },
+  {
+    name: 'Elena Vance',
+    role: 'Senior 3D Designer',
+    image: '/3d_designer.png',
+    bio: 'Expert in photorealistic product rendering and industrial modeling, bringing concepts to life in three dimensions.',
+    tags: ['Modeling', 'Rendering', 'Texturing']
+  }
+];
+
+// ─── 07. SOCIAL PROOF ────────────────────────────────────────────────
+//testimonials section
 export const TESTIMONIALS = [
   {
     name:     'Sarah Chen',

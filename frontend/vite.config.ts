@@ -8,6 +8,18 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    babel({ presets: [reactCompilerPreset()] })
+    babel({ presets: [reactCompilerPreset()] }),
   ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          // This separates node_modules into its own 'vendor' chunk
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
+        },
+      },
+    },
+  },
 })

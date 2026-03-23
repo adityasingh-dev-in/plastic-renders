@@ -2,23 +2,19 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
 
-// Designer image paths (absolute)
-const VIDEO_EDITOR_IMG = '/video_editor.png';
-const DESIGNER_3D_IMG = '/3d_designer.png';
-
 // Designers data
 const DESIGNERS = [
   {
     name: 'Alex Rivera',
     role: 'Lead Video Editor',
-    image: VIDEO_EDITOR_IMG,
+    image: '/video_editor.png',
     bio: 'Specializing in cinematic storytelling and high-energy motion graphics with 8+ years of experience in post-production.',
     tags: ['Color Grading', 'VFX', 'Sound Design']
   },
   {
     name: 'Elena Vance',
     role: 'Senior 3D Designer',
-    image: DESIGNER_3D_IMG,
+    image: '/3d_designer.png',
     bio: 'Expert in photorealistic product rendering and industrial modeling, bringing concepts to life in three dimensions.',
     tags: ['Modeling', 'Rendering', 'Texturing']
   }
@@ -38,7 +34,7 @@ export default function AboutSection() {
   const isInView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section id="about" className="bg-[var(--gray)]">
+    <section id="about" className="bg-(--gray)">
       <div
         ref={ref}
         className="w-full flex flex-col lg:flex-row gap-16 md:gap-24 items-start max-w-[1200px] mx-auto"

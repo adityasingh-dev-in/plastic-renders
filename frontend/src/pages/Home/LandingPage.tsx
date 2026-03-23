@@ -1,6 +1,6 @@
 import { useLenis } from '../../hooks/useLenis';
 import HeroSection from '../../sections/Hero/HeroSection';
-import AboutSection from '../../sections/ProjectsPreview/AboutSection';
+import AboutSection from '../../sections/About/AboutSection';
 import VideoPortfolio from '../../sections/Portfolio/VideoPortfolio';
 import ModelPortfolio from '../../sections/Portfolio/ModelPortfolio';
 import ServicesSection from '../../sections/Services/ServicesSection';

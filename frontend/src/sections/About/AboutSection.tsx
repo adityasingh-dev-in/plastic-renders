@@ -1,24 +1,6 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-
-
-// Designers data
-const DESIGNERS = [
-  {
-    name: 'Alex Rivera',
-    role: 'Lead Video Editor',
-    image: '/video_editor.png',
-    bio: 'Specializing in cinematic storytelling and high-energy motion graphics with 8+ years of experience in post-production.',
-    tags: ['Color Grading', 'VFX', 'Sound Design']
-  },
-  {
-    name: 'Elena Vance',
-    role: 'Senior 3D Designer',
-    image: '/3d_designer.png',
-    bio: 'Expert in photorealistic product rendering and industrial modeling, bringing concepts to life in three dimensions.',
-    tags: ['Modeling', 'Rendering', 'Texturing']
-  }
-];
+import { DESIGNERS } from '../../constants/data';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },

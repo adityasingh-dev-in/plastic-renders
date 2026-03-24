@@ -1,14 +1,14 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { STATS } from '../../constants/data';
+import { STATS } from '../../../../constants/data';
 
 export default function StatsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section 
-      ref={ref} 
+    <section
+      ref={ref}
       className="relative py-20 bg-white overflow-hidden"
     >
       {/* Background Decorative Element */}
@@ -21,10 +21,10 @@ export default function StatsSection() {
               key={stat.label}
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ 
-                duration: 0.8, 
-                delay: i * 0.2, 
-                ease: [0.21, 1.11, 0.81, 0.99] 
+              transition={{
+                duration: 0.8,
+                delay: i * 0.2,
+                ease: [0.21, 1.11, 0.81, 0.99]
               }}
               className="relative group flex flex-col items-center text-center p-8 rounded-3xl transition-all duration-500 hover:bg-blue-50/30"
             >
@@ -33,12 +33,12 @@ export default function StatsSection() {
                 {stat.num}
               </div>
 
-              <motion.span 
+              <motion.span
                 className="text-5xl md:text-6xl font-serif font-black text-gray-900 tracking-tighter mb-2"
               >
                 {stat.num}
               </motion.span>
-              
+
               <div className="flex items-center gap-3">
                 <span className="w-8 h-[2px] bg-blue-600 rounded-full" />
                 <span className="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-gray-400">
@@ -46,7 +46,7 @@ export default function StatsSection() {
                 </span>
                 <span className="w-2 h-[2px] bg-blue-600 rounded-full opacity-40" />
               </div>
-              
+
               {/* Animated Underline on Hover */}
               <div className="mt-4 w-0 h-1 bg-blue-600/10 rounded-full group-hover:w-12 transition-all duration-500" />
             </motion.div>

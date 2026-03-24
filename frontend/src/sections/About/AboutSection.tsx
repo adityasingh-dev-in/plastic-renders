@@ -1,13 +1,13 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { DESIGNERS } from '../../constants/data';
+import { PROFESSIONALS } from '../../../../constants/data';
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 20 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: i * 0.1 },
+    transition: { duration: 0.5, delay: i * 0.05 },
   }),
 };
 
@@ -16,21 +16,19 @@ export default function AboutSection() {
   const isInView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section id="about" className="bg-(--gray)">
-      <div
-        ref={ref}
-        className="w-full flex flex-col lg:flex-row gap-16 md:gap-24 items-start max-w-[1200px] mx-auto"
-      >
-        {/* ── Left: Intro Text ── */}
-        <div className="lg:sticky lg:top-32 lg:max-w-[400px]">
+    <section id="about" className="bg-[#ffffff] py-24 border-y border-zinc-100">
+      <div ref={ref} className="max-w-[1200px] mx-auto px-6">
+
+        {/* ── Header: Focused on the Client's Journey ── */}
+        <div className="max-w-[800px] mb-20 text-center mx-auto">
           <motion.div
             initial="hidden"
             animate={isInView ? 'visible' : 'hidden'}
             custom={0}
             variants={fadeUp}
-            className="text-[0.75rem] font-semibold tracking-[0.14em] uppercase text-[var(--muted)] mb-5"
+            className="text-[0.7rem] font-bold tracking-[0.2em] uppercase text-blue-600 mb-4"
           >
-            Our Expertise
+            The Plastic Renders Collective
           </motion.div>
 
           <motion.h2
@@ -38,10 +36,9 @@ export default function AboutSection() {
             animate={isInView ? 'visible' : 'hidden'}
             custom={1}
             variants={fadeUp}
-            className="font-serif font-bold leading-[1.15] tracking-[-0.02em]"
-            style={{ fontSize: 'clamp(2rem, 4vw, 3.2rem)' }}
+            className="text-4xl md:text-5xl font-serif font-bold text-zinc-900 leading-tight tracking-tight mb-6"
           >
-            Meet Our <span className="text-[var(--blue)]">Specialists</span>
+            Your ideas, guided by <span className="text-[#3b6fe8] font-light italic">our hands.</span>
           </motion.h2>
 
           <motion.p
@@ -49,61 +46,48 @@ export default function AboutSection() {
             animate={isInView ? 'visible' : 'hidden'}
             custom={2}
             variants={fadeUp}
-            className="mt-6 text-[#444] leading-[1.75]"
+            className="text-zinc-500 text-lg leading-relaxed"
           >
-            We've assembled a specialized team to handle your most creative needs. Whether it's crafting a visual narrative or modeling the future, our experts deliver with precision and passion.
+            We don't just "take orders." We partner with you to turn early-stage concepts into professional-grade assets. Whether you're just starting out or scaling up, our team is here to navigate the technical complexity for you.
           </motion.p>
-          
-          <motion.div
-            initial="hidden"
-            animate={isInView ? 'visible' : 'hidden'}
-            custom={3}
-            variants={fadeUp}
-            className="mt-8"
-          >
-             <a
-              href="#contact"
-              onClick={e => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }}
-              className="inline-flex items-center gap-2 bg-[var(--black)] text-white px-8 py-3.5 rounded-md text-[0.9rem] font-semibold no-underline transition-all duration-200 hover:bg-[var(--blue)] hover:-translate-y-px shadow-sm"
-            >
-              Start Your Project
-            </a>
-          </motion.div>
         </div>
 
-        {/* ── Right: Designer Cards ── */}
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-8">
-          {DESIGNERS.map((d, i) => (
+        {/* ── Team Directory: Accessible & Friendly ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {PROFESSIONALS.map((d, i) => (
             <motion.div
               key={d.name}
               initial="hidden"
               animate={isInView ? 'visible' : 'hidden'}
-              custom={i + 2}
+              custom={i + 3}
               variants={fadeUp}
-              className="bg-white rounded-2xl overflow-hidden border border-[var(--border)] shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-[300ms] hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] group"
+              className="group p-8 bg-zinc-50/50 border border-zinc-100 rounded-2xl transition-all duration-300 hover:bg-white hover:border-blue-500/20 hover:shadow-[0_15px_40px_rgba(0,0,0,0.04)]"
             >
-              <div className="w-full aspect-[4/5] overflow-hidden bg-[var(--gray)]">
-                <img
-                  src={d.image}
-                  alt={d.name}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-8">
-                <div className="text-[var(--blue)] text-[0.72rem] font-bold tracking-wider uppercase mb-1">
-                  {d.role}
+              {/* Initials with a more "Human" touch */}
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 rounded-full bg-white border border-zinc-200 flex items-center justify-center text-sm font-bold text-zinc-600 group-hover:text-blue-600 group-hover:border-blue-200 transition-all shadow-sm">
+                  {d.name.split(' ').map(n => n[0]).join('')}
                 </div>
-                <h3 className="text-[var(--black)] text-[1.4rem] font-serif font-bold mb-3">
-                  {d.name}
-                </h3>
-                <p className="text-[var(--muted)] text-[0.88rem] leading-[1.6] mb-5">
-                  {d.bio}
-                </p>
+                <div>
+                  <div className="text-blue-600 text-[0.65rem] font-black tracking-widest uppercase">
+                    {d.role}
+                  </div>
+                  <h3 className="text-zinc-900 text-lg font-bold">
+                    {d.name}
+                  </h3>
+                </div>
+              </div>
+
+              <p className="text-zinc-500 text-[0.9rem] leading-relaxed mb-6">
+                {d.bio}
+              </p>
+
+              {/* Skills / What they help you with */}
+              <div className="space-y-3">
+                <div className="text-[0.65rem] font-bold text-zinc-400 uppercase tracking-tighter">How they'll help you:</div>
                 <div className="flex flex-wrap gap-2">
                   {d.tags.map(tag => (
-                    <span key={tag} className="px-3 py-1 bg-[var(--gray)] rounded-full text-[0.7rem] font-medium text-[var(--muted)]">
+                    <span key={tag} className="text-[0.7rem] font-medium text-zinc-600 px-3 py-1 bg-white rounded-full border border-zinc-200 group-hover:border-zinc-300 transition-colors">
                       {tag}
                     </span>
                   ))}
@@ -112,8 +96,22 @@ export default function AboutSection() {
             </motion.div>
           ))}
         </div>
+
+        {/* ── Trust Footer ── */}
+        <motion.div
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          custom={PROFESSIONALS.length + 3}
+          variants={fadeUp}
+          className="mt-20 p-8 rounded-3xl bg-zinc-900 text-center"
+        >
+          <h4 className="text-white font-medium mb-2">New to 3D or Rendering?</h4>
+          <p className="text-zinc-400 text-sm mb-6">Don't worry about the technical details. We handle the hard stuff so you can focus on the vision.</p>
+          <a href="#contact" className="inline-block px-6 py-3 bg-blue-600 text-white text-sm font-bold rounded-lg hover:bg-blue-500 transition-colors">
+            Ask us a beginner question
+          </a>
+        </motion.div>
       </div>
     </section>
   );
 }
-

@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { Play } from 'lucide-react';
-import { VIDEO_PROJECTS } from '../../constants/data';
+import { VIDEO_PROJECTS } from '../../../../constants/data';
 
 // ── Video Card ───────────────────────────────────────────────
 interface VideoCardProps {
@@ -25,8 +25,8 @@ function VideoCard({ project, index, onOpen }: VideoCardProps) {
     >
       {/* Thumbnail area */}
       <div className="w-full aspect-video overflow-hidden relative bg-[var(--gray)]">
-        <img 
-          src={project.thumbnail} 
+        <img
+          src={project.thumbnail}
           alt={project.title}
           loading="lazy"
           decoding="async"

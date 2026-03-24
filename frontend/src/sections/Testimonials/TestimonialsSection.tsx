@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { TESTIMONIALS } from '../../constants/data';
+import { TESTIMONIALS } from '../../../../constants/data';
 
 // ── Single testimonial card (isolated so hooks are called at component level) ──
 function TestimonialCard({ t, delay }: { t: typeof TESTIMONIALS[0]; delay: number }) {

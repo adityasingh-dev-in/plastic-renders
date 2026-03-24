@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
-import { SERVICES } from '../../constants/data';
+import { SERVICES } from '../../../../constants/data';
 import { ArrowRight, X } from 'lucide-react'; // Added for better UI
 
 // ── Service Card ───────────────────────────────────────────────
@@ -19,8 +19,8 @@ function ServiceCard({ service, index, onOpen }: any) {
     >
       {/* Image area with Gradient Overlay */}
       <div className="relative w-full h-[220px] overflow-hidden">
-        <img 
-          src={service.image} 
+        <img
+          src={service.image}
           alt={service.title}
           loading="lazy"
           decoding="async"
@@ -70,7 +70,7 @@ function ServiceModal({ service, onClose }: any) {
           className="bg-white rounded-3xl max-w-[800px] w-full max-h-[90vh] overflow-hidden shadow-2xl relative flex flex-col md:flex-row"
         >
           {/* Close Button - More visible on mobile */}
-          <button 
+          <button
             onClick={onClose}
             className="absolute top-4 right-4 z-50 p-2 bg-black/10 sm:bg-white/20 hover:bg-black/20 sm:hover:bg-white/40 backdrop-blur-md rounded-full text-gray-900 sm:text-white transition-colors"
           >
@@ -79,11 +79,11 @@ function ServiceModal({ service, onClose }: any) {
 
           {/* Modal Image - Adjusted for Mobile Aspect Ratio */}
           <div className="w-full md:w-5/12 h-48 md:h-auto relative shrink-0">
-             <img src={service.image} className="w-full h-full object-cover" alt={service.title} loading="lazy" decoding="async" />
-             <div 
-               className="absolute inset-0 opacity-40" 
-               style={{ background: `linear-gradient(to bottom right, ${service.c1}, ${service.c2})` }} 
-             />
+            <img src={service.image} className="w-full h-full object-cover" alt={service.title} loading="lazy" decoding="async" />
+            <div
+              className="absolute inset-0 opacity-40"
+              style={{ background: `linear-gradient(to bottom right, ${service.c1}, ${service.c2})` }}
+            />
           </div>
 
           {/* Modal Content - Better padding and scrolling */}
@@ -97,7 +97,7 @@ function ServiceModal({ service, onClose }: any) {
             <p className="text-gray-600 leading-relaxed text-sm mb-6">
               {service.long}
             </p>
-            
+
             <div className="space-y-3 mb-8">
               {service.features.map((f: string) => (
                 <div key={f} className="flex items-start gap-3 text-sm text-gray-700 font-medium">
@@ -109,15 +109,15 @@ function ServiceModal({ service, onClose }: any) {
 
             {/* Actions - Stacked on mobile for better tap targets if needed, or flex-row */}
             <div className="mt-auto flex flex-col sm:flex-row gap-3">
-              <a 
-                href="#contact" 
-                onClick={() => { onClose(); document.querySelector('#contact')?.scrollIntoView({behavior:'smooth'}); }}
+              <a
+                href="#contact"
+                onClick={() => { onClose(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }}
                 className="flex-1 text-center py-3.5 bg-gray-900 text-white rounded-xl font-bold text-sm hover:bg-blue-600 transition-all active:scale-95 shadow-lg"
               >
                 Inquire Now
               </a>
-              <button 
-                onClick={onClose} 
+              <button
+                onClick={onClose}
                 className="px-6 py-3.5 border border-gray-200 rounded-xl font-bold text-sm text-gray-500 hover:bg-gray-50 transition-colors"
               >
                 Close
@@ -151,19 +151,19 @@ export default function ServicesSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {SERVICES.map((svc, i) => (
-            <ServiceCard 
-              key={svc.title} 
-              service={svc} 
-              index={i} 
-              onOpen={setModalIdx} 
+            <ServiceCard
+              key={svc.title}
+              service={svc}
+              index={i}
+              onOpen={setModalIdx}
             />
           ))}
         </div>
       </div>
 
-      <ServiceModal 
-        service={modalIdx !== null ? SERVICES[modalIdx] : null} 
-        onClose={() => setModalIdx(null)} 
+      <ServiceModal
+        service={modalIdx !== null ? SERVICES[modalIdx] : null}
+        onClose={() => setModalIdx(null)}
       />
     </section>
   );

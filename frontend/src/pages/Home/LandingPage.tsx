@@ -6,6 +6,7 @@ import ModelPortfolio from '../../sections/Portfolio/ModelPortfolio';
 import Footer from '../../components/ui/Footer';
 import BackToTop from '../../components/ui/BackToTop';
 import SEO from '../../components/SEO';
+import ChatBot from '../../components/ui/ChatBot';
 
 const AboutSection = lazy(() => import('../../sections/About/AboutSection'));
 const ServicesSection = lazy(() => import('../../sections/Services/ServicesSection'));
@@ -41,6 +42,7 @@ const LandingPage = () => {
       </Suspense>
       <Footer />
       <BackToTop />
+      <ChatBot />
     </main>
   );
 };

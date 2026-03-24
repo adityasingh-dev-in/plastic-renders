@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { Images, ChevronLeft, ChevronRight, X } from 'lucide-react';
-import { MODEL_PROJECTS } from '../../constants/data';
+import { MODEL_PROJECTS } from '../../../../constants/data';
 
 // ── Model Card ───────────────────────────────────────────────
 interface ModelCardProps {
@@ -25,8 +25,8 @@ function ModelCard({ project, index, onOpen }: ModelCardProps) {
     >
       {/* Thumbnail area */}
       <div className="w-full aspect-[4/3] overflow-hidden relative bg-[var(--gray)]">
-        <img 
-          src={project.thumbnail} 
+        <img
+          src={project.thumbnail}
           alt={project.title}
           loading="lazy"
           decoding="async"
@@ -113,7 +113,7 @@ function ModelModal({ project, onClose }: ModelModalProps) {
 
           {/* Carousel Container */}
           <div className="w-full max-w-[1400px] flex-1 flex items-center justify-center relative my-12 pointer-events-none">
-            
+
             {/* Image */}
             <div className="relative w-full h-full max-h-[80vh] flex items-center justify-center pointer-events-auto">
               <AnimatePresence mode="wait">
@@ -158,9 +158,8 @@ function ModelModal({ project, onClose }: ModelModalProps) {
               <button
                 key={i}
                 onClick={() => setCurrentIndex(i)}
-                className={`w-3 h-3 rounded-full border-none p-0 cursor-pointer transition-all duration-300 ${
-                  i === currentIndex ? 'bg-white scale-125' : 'bg-white/30 hover:bg-white/50'
-                }`}
+                className={`w-3 h-3 rounded-full border-none p-0 cursor-pointer transition-all duration-300 ${i === currentIndex ? 'bg-white scale-125' : 'bg-white/30 hover:bg-white/50'
+                  }`}
                 aria-label={`Go to slide ${i + 1}`}
               />
             ))}

@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Menu } from 'lucide-react';
-import { NAV_LINKS } from '../../constants/data';
+import { NAV_LINKS } from '../../../../constants/data';
 
 /**
  * Fixed top navigation bar.
@@ -40,9 +40,8 @@ export default function Navbar() {
     <>
       {/* ── Main Nav ── */}
       <nav
-        className={`fixed top-0 left-0 right-0 z-200 flex items-center justify-between px-[5vw] h-[72px] bg-white/95 backdrop-blur-md border-b border-(--border) transition-shadow duration-300 ${
-          scrolled ? 'shadow-[0_4px_24px_rgba(0,0,0,0.08)]' : ''
-        }`}
+        className={`fixed top-0 left-0 right-0 z-200 flex items-center justify-between px-[5vw] h-[72px] bg-white/95 backdrop-blur-md border-b border-(--border) transition-shadow duration-300 ${scrolled ? 'shadow-[0_4px_24px_rgba(0,0,0,0.08)]' : ''
+          }`}
       >
         {/* Logo */}
         <a

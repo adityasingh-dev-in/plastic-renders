@@ -4,7 +4,7 @@ import { useForm, type SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import emailjs from '@emailjs/browser';
-import { SOCIAL_LINKS } from '../../constants/data';
+import { SOCIAL_LINKS } from '../../../../constants/data';
 import {
   Instagram,
   MessageCircle,
@@ -16,8 +16,8 @@ import {
 
 // ── Form schema ────────────────────────────────────────────────
 const schema = z.object({
-  name:    z.string().min(2, 'Name is required'),
-  email:   z.string().email('Enter a valid email'),
+  name: z.string().min(2, 'Name is required'),
+  email: z.string().email('Enter a valid email'),
   service: z.string().optional(),
   subject: z.string().optional(),
   message: z.string().min(10, 'Message must be at least 10 characters'),
@@ -67,8 +67,8 @@ export default function ContactSection() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
   const [submitted, setSubmitted] = useState(false);
-  const [error, setError]         = useState(false);
-  const [sending, setSending]     = useState(false);
+  const [error, setError] = useState(false);
+  const [sending, setSending] = useState(false);
 
   const {
     register,
@@ -86,12 +86,12 @@ export default function ContactSection() {
         import.meta.env.VITE_EMAIL_SERVICE,
         import.meta.env.VITE_EMAIL_TEMPLATE,
         {
-          visitor_name:    data.name,
-          visitor_email:   data.email,
+          visitor_name: data.name,
+          visitor_email: data.email,
           visitor_message: data.message,
-          reply_to:        data.email,
-          service:         data.service ?? 'Not specified',
-          subject:         data.subject ?? 'No Subject',
+          reply_to: data.email,
+          service: data.service ?? 'Not specified',
+          subject: data.subject ?? 'No Subject',
         },
         import.meta.env.VITE_EMAIL_KEY
       );
@@ -107,8 +107,8 @@ export default function ContactSection() {
   };
 
   const fade = (delay: number) => ({
-    initial:   { opacity: 0, y: 20 },
-    animate:   inView ? { opacity: 1, y: 0 } : {},
+    initial: { opacity: 0, y: 20 },
+    animate: inView ? { opacity: 1, y: 0 } : {},
     transition: { duration: 0.6, delay },
   });
 

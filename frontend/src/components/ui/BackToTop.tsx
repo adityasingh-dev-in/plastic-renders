@@ -24,7 +24,7 @@ export default function BackToTop() {
           exit={{ opacity: 0, y: 16 }}
           transition={{ duration: 0.3 }}
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-20 right-8 z-[150] w-11 h-11 bg-[var(--black)] text-white border-none rounded-[10px] cursor-pointer flex items-center justify-center shadow-[0_4px_16px_rgba(0,0,0,0.25)] transition-colors duration-200 hover:bg-[var(--blue)]"
+          className="fixed bottom-23 right-8 z-[150] w-11 h-11 bg-[var(--black)] text-white border-none rounded-[10px] cursor-pointer flex items-center justify-center shadow-[0_4px_16px_rgba(0,0,0,0.25)] transition-colors duration-200 hover:bg-[var(--blue)]"
           title="Back to top"
         >
           <ChevronUp size={18} strokeWidth={2.5} />
